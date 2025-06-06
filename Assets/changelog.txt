@@ -1,2 +1,2 @@
--Added new FPS controller.
--Added a second level and a dropdown menu.
+-Added a pause menu
+-Added more support for WebGL and upcoming mobile releases.
