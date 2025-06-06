@@ -33,7 +33,9 @@ public class SC_FPSController : MonoBehaviour
 
     void Update()
     {
-        // We are grounded, so recalculate move direction based on axes
+        if (Time.deltaTime > 0)
+        {
+            // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         // Press Left Shift to run
@@ -70,6 +72,7 @@ public class SC_FPSController : MonoBehaviour
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        }
         }
     }
 }
