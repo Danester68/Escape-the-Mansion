@@ -1,2 +1,0 @@
--Added a pause menu
--Added more support for WebGL and upcoming mobile releases.
