@@ -14,13 +14,12 @@ public class UIManager : MonoBehaviour
     public String level1Name;
     public String level2Name;
     public TMP_Dropdown levelDropdown;
-    #if UNTIY_WEBGL || UNITY_IOS || UNITY_ANDROID
-        exitButton.SetActive(false);
-    #endif
     // Start is called before the first frame update
     void Start()
     {
-        
+        #if UNITY_WEBGL || UNITY_IOS || UNITY_ANDROID
+            exitButton.SetActive(false);
+        #endif
     }
 
     // Update is called once per frame
