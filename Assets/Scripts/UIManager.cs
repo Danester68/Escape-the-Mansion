@@ -8,11 +8,15 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject exitButton;
     public GameObject instructionMenu;
     private String levelName;
     public String level1Name;
     public String level2Name;
     public TMP_Dropdown levelDropdown;
+    #if UNTIY_WEBGL || UNITY_IOS || UNITY_ANDROID
+        exitButton.SetActive(false);
+    #endif
     // Start is called before the first frame update
     void Start()
     {
