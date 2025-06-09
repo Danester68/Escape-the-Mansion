@@ -11,4 +11,5 @@ itch page: <a href="https://tgcdev.itch.io/escape-the-mansion">tgcdev.itch.io/es
 Google Sites page: <a href="https://sites.google.com/view/tgcdev/games/escape-the-mansion">https://sites.google.com/view/tgcdev/games/escape-the-mansion</a>
 # Credits
 Owner: Danester68<br/>
-FPS Controller: <a href="https://www.sharpcoderblog.com/blog/unity-3d-fps-controller">https://www.sharpcoderblog.com/blog/unity-3d-fps-controller</a>
+FPS Controller: <a href="https://www.sharpcoderblog.com/blog/unity-3d-fps-controller">https://www.sharpcoderblog.com/blog/unity-3d-fps-controller</a><br/>
+External Tools: Unity, Visual Studio Code, Blender
