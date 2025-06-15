@@ -18,8 +18,7 @@ public class GameCanvasManager : MonoBehaviour
     // public Button moveLeft;
     // public Button moveDown;
     // public Button moveRight;
-    public float mbHoriz = 0f;
-    public float mbVert = 0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -44,8 +43,6 @@ public class GameCanvasManager : MonoBehaviour
         {
             TogglePauseMenu();
         }
-        // Debug print
-        print("Horizontal = " + mbHoriz + ", Vertical = " + mbVert);
     }
 
     public void TogglePauseMenu()
@@ -74,20 +71,5 @@ public class GameCanvasManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public void MovementButtonPressUp()
-    {
-        mbVert = 1;
-    }
-    public void MovementButtonPressLeft()
-    {
-        mbHoriz = -1;
-    }
-    public void MovementButtonPressDown()
-    {
-        mbVert = -1;
-    }
-    public void MovementButtonPressRight()
-    {
-        mbHoriz = 1;
-    }
+    
 }
