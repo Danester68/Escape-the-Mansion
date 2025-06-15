@@ -1,7 +1,7 @@
 # Escape the Mansion
 The Escape the Mansion! game.<br/>
 Version: v2.0.<br/>
-NOTICE! WebGL is currently unavailable due to the release of TGCDev's new site.
+NOTICE! WebGL is currently unavailable due to the release of TGCDev's new site.<br/>
 <a href="changelog.txt">View changelog</a>
 # About game
 In Escape the Mansion!, you need to escape a house (thus the title) and more.
