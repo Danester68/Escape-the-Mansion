@@ -256,8 +256,10 @@ MonoBehaviour:
   movementButtonObject: {fileID: 2686501260161952125}
   pauseText: {fileID: 9110701307513497061}
   pauseMenuButton: 27
-  mbHoriz: 0
-  mbVert: 0
+  characterController: {fileID: 0}
+  walkingSpeed: 7.5
+  jumpSpeed: 8
+  moveUp: {fileID: 0}
 --- !u!1 &576264043899823128
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,6 +680,7 @@ GameObject:
   - component: {fileID: 9033433813671302070}
   - component: {fileID: 4388607703789316837}
   - component: {fileID: 9119761984357951408}
+  - component: {fileID: 2416269413933720163}
   m_Layer: 5
   m_Name: Right
   m_TagString: Untagged
@@ -799,6 +802,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2416269413933720163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141109204402656440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1456492001720174698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1221,7 @@ GameObject:
   - component: {fileID: 8865587019901791218}
   - component: {fileID: 1463886481343471303}
   - component: {fileID: 1400308117756169652}
+  - component: {fileID: 818749823006979288}
   m_Layer: 5
   m_Name: Down
   m_TagString: Untagged
@@ -1318,6 +1343,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &818749823006979288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3110355560199615013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &4978563260105707788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,6 +1376,7 @@ GameObject:
   - component: {fileID: 2187578331755578641}
   - component: {fileID: 1038279306670844553}
   - component: {fileID: 282918603625412377}
+  - component: {fileID: 1209153979620205647}
   m_Layer: 5
   m_Name: Up
   m_TagString: Untagged
@@ -1438,19 +1485,40 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1038279306670844553}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5871639147446843458}
-        m_TargetAssemblyTypeName: GameCanvasManager, Assembly-CSharp
-        m_MethodName: MovementButtonPressUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &1209153979620205647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4978563260105707788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5871639147446843458}
+          m_TargetAssemblyTypeName: GameCanvasManager, Assembly-CSharp
+          m_MethodName: MBMove
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: up
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &5291035796826932574
 GameObject:
   m_ObjectHideFlags: 0
@@ -2143,6 +2211,7 @@ GameObject:
   - component: {fileID: 1888745406098415200}
   - component: {fileID: 6179609586302429959}
   - component: {fileID: 3018952271825646810}
+  - component: {fileID: 75728138143591917}
   m_Layer: 5
   m_Name: Left
   m_TagString: Untagged
@@ -2264,6 +2333,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &75728138143591917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7172030925124085360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &7862826203078941200
 GameObject:
   m_ObjectHideFlags: 0

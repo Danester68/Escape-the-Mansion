@@ -10,6 +10,7 @@ public class GameCanvasManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject movementButtonObject;
 
+
     public TextMeshProUGUI pauseText;
 
     public KeyCode pauseMenuButton = KeyCode.Escape; // Default key binding
@@ -32,12 +33,15 @@ public class GameCanvasManager : MonoBehaviour
         pauseMenuButton = KeyCode.P;
 #elif UNITY_IOS || UNITY_ANDROID
         pauseText.text = "Pause";
+        pauseMenuButton = KeyCode.P;
 #endif
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector3 forward = transform.TransformDirection(Vector3.forward);
+        Vector3 right = transform.TransformDirection(Vector3.right);
         // Check if the escape key is pressed to toggle the pause menu
         if (Input.GetKeyDown(pauseMenuButton))
         {
@@ -70,6 +74,4 @@ public class GameCanvasManager : MonoBehaviour
         Cursor.visible = true;
         SceneManager.LoadScene("Menu");
     }
-
-    
 }
