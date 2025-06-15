@@ -26,13 +26,8 @@ public class GameManagerLevel1 : MonoBehaviour
     {
         if (isFinished && Input.GetKeyDown(KeyCode.Return)) 
         {
+            Time.timeScale = 1f;
             SceneManager.LoadSceneAsync(nextLevelName);
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            SceneManager.LoadSceneAsync("Menu");
         }
     }
 

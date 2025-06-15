@@ -1,4 +1,3 @@
-Changelog for v2.0
--Added new FPS controller.
--Added a new level to the game.
--Added a dropdown menu to the menu so players can select the level to play.
+Changelog for v2.1
+-Added a pause menu
+-Added more support for WebGL and upcoming mobile releases.

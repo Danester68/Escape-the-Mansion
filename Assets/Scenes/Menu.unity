@@ -2147,6 +2147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ab373060f3de343a2c111650d586af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitButton: {fileID: 444480267}
   instructionMenu: {fileID: 821516641}
   level1Name: Level1
   level2Name: Level2

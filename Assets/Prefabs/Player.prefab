@@ -157,7 +157,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: {fileID: 0}
   door: {fileID: 0}
-  finishObject: {fileID: 0}
   finishUI: {fileID: 0}
   lightScript: {fileID: 0}
   nextLevelName: Level2

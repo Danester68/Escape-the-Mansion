@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject exitButton;
     public GameObject instructionMenu;
     private String levelName;
     public String level1Name;
@@ -16,7 +17,9 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        #if UNITY_WEBGL || UNITY_IOS || UNITY_ANDROID
+            exitButton.SetActive(false);
+        #endif
     }
 
     // Update is called once per frame

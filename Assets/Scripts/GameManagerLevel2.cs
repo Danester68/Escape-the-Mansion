@@ -25,15 +25,11 @@ public class GameManagerLevel2 : MonoBehaviour
     {
         if (isFinished && Input.GetKeyDown(KeyCode.Return)) 
         {
+            Time.timeScale = 1f;
+            // Remove Cursor code lines for Level 3
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             SceneManager.LoadSceneAsync(nextLevelName);
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            SceneManager.LoadSceneAsync("Menu");
         }
     }
 
