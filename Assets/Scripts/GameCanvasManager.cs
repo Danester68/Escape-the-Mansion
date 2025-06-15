@@ -9,6 +9,7 @@ public class GameCanvasManager : MonoBehaviour
     public GameObject pauseButtonObject;
     public GameObject pauseMenu;
     public GameObject movementJoystickObject;
+    public GameObject jumpButtonObject;
 
     public TextMeshProUGUI pauseText;
 
@@ -21,6 +22,7 @@ public class GameCanvasManager : MonoBehaviour
 #if UNITY_WEBGL || UNITY_IOS || UNITY_ANDROID || UNITY_EDITOR
         pauseButtonObject.SetActive(true);
         movementJoystickObject.SetActive(true);
+        jumpButtonObject.SetActive(true);
 #endif
 #if UNITY_WEBGL || UNITY_EDITOR
         pauseText.text = "Pause (P)";
@@ -55,8 +57,14 @@ public class GameCanvasManager : MonoBehaviour
         else if (pauseMenu.activeInHierarchy == true)
         {
             Time.timeScale = 1f;
+            // Remove UNITY_EDITOR after testing is finished
+#if UNITY_IOS || UNITY_ANDROID || UNITY_EDITOR
+
+#else
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            characterController.detectCollisions = true;
+#endif
             pauseMenu.SetActive(false);
         }
     }
