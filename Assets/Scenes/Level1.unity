@@ -1220,12 +1220,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1575563578}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1286398764 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6683065380390970685, guid: b6b76ca17aa909a469ceb40bd86f5b59,
-    type: 3}
-  m_PrefabInstance: {fileID: 6587318373518729924}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1311108010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,6 +1842,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 795174574920125215, guid: fbb45feb78408674d8d3cfbb6ba89aff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2619084817265413809, guid: fbb45feb78408674d8d3cfbb6ba89aff,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1981,16 +1980,17 @@ PrefabInstance:
       propertyPath: lightScript
       value: 
       objectReference: {fileID: 1848149142}
-    - target: {fileID: 1038406447494691669, guid: 30eed6df2aaf1b443a93e2778eb3d770,
-        type: 3}
-      propertyPath: finishObject
-      value: 
-      objectReference: {fileID: 1286398764}
     - target: {fileID: 2151096793961126128, guid: 30eed6df2aaf1b443a93e2778eb3d770,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3617531990839291029, guid: 30eed6df2aaf1b443a93e2778eb3d770,
+        type: 3}
+      propertyPath: moveAction
+      value: 
+      objectReference: {fileID: -634331335303052992, guid: 640b49b60938bf549882f12faf83cb15,
+        type: 3}
     - target: {fileID: 6256390362979704288, guid: 30eed6df2aaf1b443a93e2778eb3d770,
         type: 3}
       propertyPath: m_LocalPosition.x

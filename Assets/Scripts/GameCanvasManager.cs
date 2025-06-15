@@ -8,17 +8,11 @@ public class GameCanvasManager : MonoBehaviour
 {
     public GameObject pauseButtonObject;
     public GameObject pauseMenu;
-    public GameObject movementButtonObject;
-
+    public GameObject movementJoystickObject;
 
     public TextMeshProUGUI pauseText;
 
     public KeyCode pauseMenuButton = KeyCode.Escape; // Default key binding
-
-    // public Button moveUp;
-    // public Button moveLeft;
-    // public Button moveDown;
-    // public Button moveRight;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,7 +20,7 @@ public class GameCanvasManager : MonoBehaviour
         //Remove UNITY_EDITOR after testing is finished
 #if UNITY_WEBGL || UNITY_IOS || UNITY_ANDROID || UNITY_EDITOR
         pauseButtonObject.SetActive(true);
-        movementButtonObject.SetActive(true);
+        movementJoystickObject.SetActive(true);
 #endif
 #if UNITY_WEBGL || UNITY_EDITOR
         pauseText.text = "Pause (P)";

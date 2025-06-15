@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 
@@ -18,30 +19,49 @@ public class SC_FPSController : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
 
+    float horizAxis;
+    float vertAxis;
+
+    [SerializeField] private InputActionReference moveAction;
+
     [HideInInspector]
     public bool canMove = true;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        //Remove UNITY_EDITOR after testing is finished
+#if UNITY_IOS || UNITY_ANDROID || UNITY_EDITOR
 
-        // Lock cursor
+#else
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         characterController.detectCollisions = true;
+#endif
+        // Lock cursor
     }
 
     void Update()
     {
         if (Time.deltaTime > 0)
         {
+            if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+            {
+                horizAxis = moveAction.action.ReadValue<Vector2>().x;
+                vertAxis = moveAction.action.ReadValue<Vector2>().y;
+            }
+            else
+            {
+                horizAxis = Input.GetAxis("Horizontal");
+                vertAxis = Input.GetAxis("Vertical");
+            }
             // We are grounded, so recalculate move direction based on axes
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);
             // Press Left Shift to run
             bool isRunning = Input.GetKey(KeyCode.LeftShift);
-            float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
-            float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
+            float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * vertAxis : 0;
+            float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * horizAxis : 0;
             float movementDirectionY = moveDirection.y;
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
