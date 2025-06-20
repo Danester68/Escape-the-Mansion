@@ -15,16 +15,16 @@ public class GameCanvasManager : MonoBehaviour
 
     public KeyCode pauseMenuButton = KeyCode.Escape; // Default key binding
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Remove UNITY_EDITOR after testing is finished
-#if UNITY_WEBGL || UNITY_IOS || UNITY_ANDROID || UNITY_EDITOR
+#if UNITY_WEBGL || UNITY_IOS || UNITY_ANDROID
         pauseButtonObject.SetActive(true);
         movementJoystickObject.SetActive(true);
         jumpButtonObject.SetActive(true);
 #endif
-#if UNITY_WEBGL || UNITY_EDITOR
+#if UNITY_WEBGL
         pauseText.text = "Pause (P)";
         pauseMenuButton = KeyCode.P;
 #elif UNITY_IOS || UNITY_ANDROID
@@ -57,14 +57,6 @@ public class GameCanvasManager : MonoBehaviour
         else if (pauseMenu.activeInHierarchy == true)
         {
             Time.timeScale = 1f;
-            // Remove UNITY_EDITOR after testing is finished
-#if UNITY_IOS || UNITY_ANDROID || UNITY_EDITOR
-
-#else
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            characterController.detectCollisions = true;
-#endif
             pauseMenu.SetActive(false);
         }
     }

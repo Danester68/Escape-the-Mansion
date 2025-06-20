@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,12 +15,17 @@ public class UIManager : MonoBehaviour
     public String level1Name;
     public String level2Name;
     public TMP_Dropdown levelDropdown;
+
+    public bool mobileToggleBool;
     // Start is called before the first frame update
     void Start()
     {
-        #if UNITY_WEBGL || UNITY_IOS || UNITY_ANDROID
-            exitButton.SetActive(false);
-        #endif
+#if UNITY_WEBGL || UNITY_IOS || UNITY_ANDROID
+        exitButton.SetActive(false);
+#endif
+#if UNTIY_WEBGL
+        mobileToggle.SetActive(true);
+#endif
     }
 
     // Update is called once per frame
@@ -54,5 +60,10 @@ public class UIManager : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void changeMobileToggleBool(bool set)
+    {
+        mobileToggleBool = set;
     }
 }

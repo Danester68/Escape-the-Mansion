@@ -32,19 +32,16 @@ public class SC_FPSController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        //Remove UNITY_EDITOR after testing is finished
-#if UNITY_IOS || UNITY_ANDROID || UNITY_EDITOR
-
-#else
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         characterController.detectCollisions = true;
-#endif
-        // Lock cursor
     }
 
     void Update()
     {
+#if UNITY_WEBGL || UNITY_IOS || UNITY_ANDROID
+        Cursor.lockState = CursorLockMode.None;
+#endif
         if (Time.deltaTime > 0)
         {
             if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
