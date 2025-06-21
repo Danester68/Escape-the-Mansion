@@ -39,9 +39,6 @@ public class SC_FPSController : MonoBehaviour
 
     void Update()
     {
-#if UNITY_WEBGL || UNITY_IOS || UNITY_ANDROID
-        Cursor.lockState = CursorLockMode.None;
-#endif
         if (Time.deltaTime > 0)
         {
             if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
