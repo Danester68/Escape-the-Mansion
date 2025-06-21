@@ -15,8 +15,6 @@ public class UIManager : MonoBehaviour
     public String level1Name;
     public String level2Name;
     public TMP_Dropdown levelDropdown;
-
-    public bool mobileToggleBool;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,10 +58,5 @@ public class UIManager : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
-    }
-
-    public void changeMobileToggleBool(bool set)
-    {
-        mobileToggleBool = set;
     }
 }

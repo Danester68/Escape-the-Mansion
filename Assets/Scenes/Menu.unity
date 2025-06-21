@@ -2404,12 +2404,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exitButton: {fileID: 444480267}
-  mobileToggle: {fileID: 1919605983}
   instructionMenu: {fileID: 821516641}
   level1Name: Level1
   level2Name: Level2
   levelDropdown: {fileID: 1960561664}
-  mobileToggleBool: 0
 --- !u!4 &1128077923
 Transform:
   m_ObjectHideFlags: 0
@@ -2616,7 +2614,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1128077922}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ExitInstructions
         m_Mode: 1
