@@ -82,7 +82,7 @@ public class SC_FPSController : MonoBehaviour
             characterController.Move(moveDirection * Time.deltaTime);
 
             // Player and Camera rotation
-            if (canMove)
+            if (canMove && moveAction.action.ReadValue<Vector2>().x == 0 && moveAction.action.ReadValue<Vector2>().y == 0)
             {
                 rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
                 rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
