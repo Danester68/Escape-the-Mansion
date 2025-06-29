@@ -1,3 +1,6 @@
 Changelog for v2.1
 -Added a pause menu
 -Added more support for WebGL and upcoming mobile releases.
+Changelog for v2.1.2
+-Fixed buttons going off the screen with low resolutions.
+-Fixed a mobile issue where the joystick moves the player's camera.
