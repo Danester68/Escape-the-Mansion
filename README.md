@@ -1,6 +1,6 @@
 # Escape the Mansion
 The Escape the Mansion! game.<br/>
-Version: v2.1.
+Version: v2.1.2.
 <a href="changelog.txt">View changelog</a>
 # About game
 In Escape the Mansion!, you need to escape a house (thus the title) and more.
